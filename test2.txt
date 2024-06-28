@@ -1,0 +1,21 @@
+static void Main(string[] args)
+    {
+        int totalHours = 0; // общее время горения
+        int initialLights = 5; // исходное количество огоньков
+        int newLightsFromOld = 2; // количество новых огоньков из потухших
+
+        // рассчитываем оптимальное количество огоньков для зажигания
+        for (int i = 1; i <= initialLights; i++) {
+            if ((initialLights - i) % newLightsFromOld == 0) {
+                int optimalLightsToLight = (initialLights - i) / newLightsFromOld;
+                totalHours += 2 * optimalLightsToLight + (i / optimalLightsToLight);
+            }
+        }
+
+        Console.WriteLine($"Оптимальное количество огоньков: {optimalLightsToLight}");
+        Console.WriteLine($"Общее время горения: {totalHours}");
+    }
+В этом примере мы предполагаем, что у Игоря есть 5 бенгальских огней 
+и из двух потухших можно сделать два новых.
+Программа рассчитывает оптимальное количество огоньков для зажигания 
+и общее время их горения.

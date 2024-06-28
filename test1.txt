@@ -1,0 +1,30 @@
+public static List<int> MergeLists(List<int> listA, List<int> listB) 
+{
+    List<int> res = new List<int>();
+
+    while (listA.Count > 0 || listB.Count > 0) 
+	{
+        	if (listA.Count == 0) 
+		{
+           	 res.Add(listB[0]);
+           	 listB.RemoveAt(0);
+        	}
+	 	else if (listB.Count == 0) 
+		{
+            	res.Add(listA[0]);
+            	listA.RemoveAt(0);
+        	} 
+		else 
+		{
+           		if (listA[0] >= listB[0]) 
+			{
+                		res.Add(listA[0]);
+                		listA.RemoveAt(0);	
+	        	} 
+	    		else 
+			{
+                		res.Add(listB[0]);
+                		listB.RemoveAt(0);
+            		}
+        }
+}
